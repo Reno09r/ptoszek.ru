@@ -167,7 +167,6 @@ const LOGOUT_SITES = {
  * Array to store the child windows spawned by this window.
  */
 const wins = []
-const pingPongWindows = new Map()
 
 /**
  * Count of number of clicks  - added by @9fm
@@ -175,7 +174,6 @@ const pingPongWindows = new Map()
 
 let interactionCount = 0
 let hasStartedVisualChaos = false
-let hasStartedPingPong = false
 
 //Bardzo dlugi string xd, ciulowa implementacja ale to chyba lepsze niz ~ 4 miliony znakow w pliku poprostu - added by @9fm
 
@@ -231,7 +229,7 @@ function init () {
     // 'touchstart' and 'touchend' events are not able to open a new window
     // (at least in Chrome), so don't even try. Checking `event.which !== 0` is just
     // a clever way to exclude touch events.
-    if (event.which !== 0 && isParentWindow) openPingPongWindows()
+    if (event.which !== 0 && isParentWindow) openWindow()
 
     startVisualChaosEffects()
     startVibrateInterval()
@@ -278,6 +276,7 @@ function init () {
 function initChildWindow () {
   registerProtocolHandlers()
   hideCursor()
+  moveWindowBounce()
   startVideo()
   detectWindowClose()
   triggerFileDownload()
@@ -646,29 +645,14 @@ function focusWindows () {
 /**
  * Open a new popup window. Requires user-initiated event.
  */
-function openPingPongWindows () {
-  while (wins.length < 3) {
-    if (!openWindow()) break
-  }
-
-  if (!hasStartedPingPong && wins.length) {
-    hasStartedPingPong = true
-    moveWindowsPingPong()
-  }
-}
-
 function openWindow () {
   const { x, y } = getRandomCoords()
   const opts = `width=${WIN_WIDTH},height=${WIN_HEIGHT},left=${x},top=${y}`
   const win = window.open(window.location.pathname, '', opts)
 
   // New windows may be blocked by the popup blocker
-  if (!win) return false
+  if (!win) return
   wins.push(win)
-  pingPongWindows.set(win, {
-    vx: VELOCITY * (Math.random() > 0.5 ? 1 : -1),
-    vy: VELOCITY * (Math.random() > 0.5 ? 1 : -1)
-  })
 
   if (wins.length === 2) setupSearchWindow(win)
 
@@ -689,7 +673,6 @@ function openWindow () {
     return ''
   }
   // Added by @wetraks
-  return true
 }
 
 /**
@@ -906,33 +889,22 @@ function requestHidAccess () {
 /**
  * Move the window around the screen and bounce off of the screen edges.
  */
-function moveWindowsPingPong () {
+function moveWindowBounce () {
+  let vx = VELOCITY * (Math.random() > 0.5 ? 1 : -1)
+  let vy = VELOCITY * (Math.random() > 0.5 ? 1 : -1)
+
   setInterval(() => {
-    const activeWindows = wins.filter(win => !win.closed)
-    activeWindows.forEach(win => {
-      const velocity = pingPongWindows.get(win)
-      const x = win.screenX
-      const y = win.screenY
+    const x = window.screenX
+    const y = window.screenY
+    const width = window.outerWidth
+    const height = window.outerHeight
 
-      if (x < MARGIN || x + win.outerWidth > SCREEN_WIDTH - MARGIN) velocity.vx *= -1
-      if (y < MARGIN + 20 || y + win.outerHeight > SCREEN_HEIGHT - MARGIN) velocity.vy *= -1
-      win.moveBy(velocity.vx, velocity.vy)
-    })
+    if (x < MARGIN) vx = Math.abs(vx)
+    if (x + width > SCREEN_WIDTH - MARGIN) vx = -Math.abs(vx)
+    if (y < MARGIN + 20) vy = Math.abs(vy)
+    if (y + height > SCREEN_HEIGHT - MARGIN) vy = -Math.abs(vy)
 
-    activeWindows.forEach((win, index) => {
-      activeWindows.slice(index + 1).forEach(other => {
-        const overlaps = win.screenX < other.screenX + other.outerWidth &&
-          win.screenX + win.outerWidth > other.screenX &&
-          win.screenY < other.screenY + other.outerHeight &&
-          win.screenY + win.outerHeight > other.screenY
-        if (!overlaps) return
-
-        pingPongWindows.get(win).vx *= -1
-        pingPongWindows.get(win).vy *= -1
-        pingPongWindows.get(other).vx *= -1
-        pingPongWindows.get(other).vy *= -1
-      })
-    })
+    window.moveBy(vx, vy)
   }, TICK_LENGTH)
 }
 
@@ -966,7 +938,6 @@ function detectWindowClose () {
 function onCloseWindow (win) {
   const i = wins.indexOf(win)
   if (i >= 0) wins.splice(i, 1)
-  pingPongWindows.delete(win)
 }
 
 /**
