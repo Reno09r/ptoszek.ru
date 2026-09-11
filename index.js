@@ -29,7 +29,8 @@ const SCREEN_HEIGHT = window.screen.availHeight
 const WIN_WIDTH = 480
 const WIN_HEIGHT = 260
 const VELOCITY = 15
-const MARGIN = 10
+const MARGIN = 15
+const TOP_MARGIN = 50
 const TICK_LENGTH = 50
 
 const HIDDEN_STYLE = 'position: fixed; width: 1px; height: 1px; overflow: hidden; top: -10px; left: -10px;'
@@ -229,7 +230,7 @@ function init () {
     // 'touchstart' and 'touchend' events are not able to open a new window
     // (at least in Chrome), so don't even try. Checking `event.which !== 0` is just
     // a clever way to exclude touch events.
-    if (event.which !== 0 && isParentWindow) openWindow()
+    if (event.which !== 0) openWindow()
 
     startVisualChaosEffects()
     startVibrateInterval()
@@ -277,6 +278,7 @@ function initChildWindow () {
   registerProtocolHandlers()
   hideCursor()
   moveWindowBounce()
+  setupFollowWindow()
   startVideo()
   detectWindowClose()
   triggerFileDownload()
@@ -901,11 +903,17 @@ function moveWindowBounce () {
 
     if (x < MARGIN) vx = Math.abs(vx)
     if (x + width > SCREEN_WIDTH - MARGIN) vx = -Math.abs(vx)
-    if (y < MARGIN + 20) vy = Math.abs(vy)
+    if (y < TOP_MARGIN) vy = Math.abs(vy)
     if (y + height > SCREEN_HEIGHT - MARGIN) vy = -Math.abs(vy)
 
     window.moveBy(vx, vy)
   }, TICK_LENGTH)
+}
+
+function setupFollowWindow () {
+  document.addEventListener('mousemove', event => {
+    window.moveTo(event.screenX - (WIN_WIDTH / 2), event.screenY - (WIN_HEIGHT / 2))
+  })
 }
 
 /**
