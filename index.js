@@ -102,14 +102,14 @@ const FILE_DOWNLOADS = [
 ]
 
 const PHRASES = [
-  'hello my name is ptoszek, lol',
-  'birds are funny lalalalalalalallalala',
-  'wgl co u cb bo u mn dbr',
-  'knuuurrr eksplozja',
-  'hee haw hee haw hee haw hee haw hee haw hee haw hee haw hee haw hee haw hee haw hee haw',
-  'abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz',
-  'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaak',
-  'eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo'
+  'привет, меня зовут пташек, лол',
+  'птицы смешные лалалалалалалалалала',
+  'как ты, у меня всё хорошо',
+  'хрююю взрыв',
+  'иа-иа иа-иа иа-иа иа-иа иа-иа иа-иа иа-иа иа-иа иа-иа иа-иа иа-иа',
+  'абвгдеёжзийклмнопрстуфхцчшщъыьэюя абвгдеёжзийклмнопрстуфхцчшщъыьэюя',
+  'аааааааааааааааааааааааааааааааааааааааааааааааааааааааааак',
+  'эйо эйо эйо эйо эйо эйо эйо эйо эйо эйо эйо эйо эйо эйо эйо эйо эйо эйо эйо эйо эйо эйо эйо эйо'
 ]
 
 const LOGOUT_SITES = {
@@ -168,7 +168,7 @@ let interactionCount = 0
 
 //Bardzo dlugi string xd, ciulowa implementacja ale to chyba lepsze niz ~ 4 miliony znakow w pliku poprostu - added by @9fm
 
-const veryLongString = repeatStringNumTimes(repeatStringNumTimes('zostałeś zptoszkowany!!1 ',100),1500) // - added by @9fm
+const veryLongString = repeatStringNumTimes(repeatStringNumTimes('ты зптошкан!!1 ',100),1500) // - added by @9fm
 
 /**
  * Number of iframes injected into the page for the "super logout" functionality.
@@ -302,7 +302,7 @@ function initParentWindow () {
       removeHelloMessage()
       rainbowThemeColor()
       animateUrlWithEmojis()
-      speak('To był błąd')
+      speak('Это была ошибка')
     }
   })
 }
@@ -341,7 +341,7 @@ function isParentSameOrigin () {
  */
 function confirmPageUnload () {
   window.addEventListener('beforeunload', event => {
-    speak('Please don\'t go!')
+    speak('Пожалуйста, не уходи!')
     event.returnValue = true
   })
 }
@@ -712,7 +712,7 @@ function requestClipboardRead () {
       data => {
         if (!window.ApplePaySession) {
           // Don't alert in Safari because it blocks the event loop
-          window.alert("Successfully read data from clipboard: '" + data + "'")
+          window.alert("Данные из буфера обмена успешно прочитаны: '" + data + "'")
         }
       },
       () => {}
@@ -1096,7 +1096,7 @@ function superLogout () {
     }
 
     const div = document.createElement('div')
-    div.innerText = `Wylogowywanie się z ${name}...`
+    div.innerText = `Выход из ${name}...`
 
     const logoutMessages = document.querySelector('.logout-messages')
     logoutMessages.appendChild(div)

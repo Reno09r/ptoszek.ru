@@ -1,64 +1,68 @@
-# ptoszek.pl - Sptoszkuj kogoś!
+# ptoszek.pl — Зптошкай кого-нибудь!
 
 ![Ptoszek.pl](./media/images/ptok.jpg)
 
-[![Oficjalny serwer Discord](https://img.shields.io/badge/Discord-Oficjalny%20serwer%20Discord-5865F2?logo=discord&logoColor=white)](https://dc.ptoszek.pl)
+[![Официальный сервер Discord](https://img.shields.io/badge/Discord-Официальный%20сервер%20Discord-5865F2?logo=discord&logoColor=white)](https://dc.ptoszek.pl)
 
-### Czym jest ptoszek.pl?
-Ptoszek.pl to projekt edukacyjny mający na celu uświadamianie użytkowników internetu o zagrożeniach związanych z otwieraniem nieznanych linków. Strona demonstruje potencjalne możliwości stron internetowych uruchamianych w przeglądarce, takie jak nietypowe interakcje czy nieoczekiwane działania.
+### Что такое ptoszek.ru (ptioszek.pl)?
+Ptoszek.ru (ptioszek.pl) — образовательный проект, призванный рассказать интернет-пользователям об опасностях открытия неизвестных ссылок. Сайт демонстрирует возможные возможности веб-страниц, работающих в браузере: необычные взаимодействия и неожиданные действия.
 
-**Uwaga:**  
-Strona jest w pełni bezpieczna. Nie powoduje żadnych szkód ani zagrożeń dla Twojego urządzenia. Wszystkie funkcje mają charakter edukacyjny, a pobierane pliki (zdjęcia, filmy) są wolne od wirusów.
-
----
-
-## Jak możesz pomóc w rozwoju projektu?
-
-Ptoszek.pl to projekt open-source i każdy może wnieść swój wkład!  
-
-- Dodaj nowe funkcje, np. kolejne nietypowe interakcje w przeglądarce.  
-- Rozszerz stronę o nowe mechanizmy (np. obsługę kolejnych nietypowych zachowań).  
-- Zgłoś swoje pomysły w postaci **Pull Requesta** – chętnie je dodam!
+**Внимание:**
+Сайт полностью безопасен. Он не причиняет вреда и не создаёт угроз для вашего устройства. Все функции имеют образовательный характер, а скачиваемые файлы (изображения и видео) не содержат вирусов.
 
 ---
 
-## Jak zacząć?
+## Как помочь развитию проекта?
 
-1. Sklonuj repozytorium:  
+Ptoszek.ru (ptioszek.pl) — проект с открытым исходным кодом, и каждый может внести свой вклад!
+
+- Добавляйте новые функции, например необычные взаимодействия в браузере.
+- Расширяйте сайт новыми механизмами, например поддержкой других нестандартных действий.
+- Предлагайте идеи через **Pull Request** — я с радостью их добавлю!
+
+---
+
+## Как начать?
+
+1. Склонируйте репозиторий:
    ```bash
    git clone https://github.com/jaczup/ptoszek.pl.git
    cd ptoszek
    ```
-2. Otwórz projekt w swoim ulubionym edytorze kodu.  
-3. Wprowadź zmiany i przetestuj je lokalnie.  
-4. Zgłoś Pull Requesta!
+2. Откройте проект в любимом редакторе кода.
+3. Внесите изменения и протестируйте их локально.
+4. Создайте Pull Request!
 
 ---
 
-## Inspiracja
+## Вдохновение
 
-Projekt został stworzony przez [jaczup.pl](https://jaczup.pl) na bazie popularnej strony [theannoyingsite.com](https://theannoyingsite.com), znanej za granicą.
-
----
-
-## Historia
-
-Pewnego dnia, chcąc strollować moich znajomych, stworzyłem stronę sapcord.pl/ptoszek. Była to przerobiona kopia theannoyingsite.com, gdzie zamiast kotów umieściłem zdjęcia ptaków i dostosowałem kod strony, dodając elementy związane ze mną. Strona zaczęła żyć własnym życiem, gdy znajomi zaczęli rozsyłać do niej linki, co stało się pierwszą formą jej promocji. Wkrótce powstał pierwszy TikTok o Ptoszku, na którym strona została otwarta podczas lekcji informatyki (przez Hedwisa - dawny znajomy [kto wie, ten wie :)]). Był to rok 2021 / 2022. Popularność zaczęła rosnąć.
-
-Rosnący ruch na stronie skłonił mnie do zakupu osobnej domeny – ptoszek.pl – na której strona działa do dziś. Wraz z nową domeną jej popularność eksplodowała, a użytkownicy masowo pokazywali ją na TikToku. Twórcy, tacy jak MokrySuchar i Dawid Jasper (i zapewne też parenastu innych o których nie wiem), zostali strollowani przez swoich widzów, którzy podsyłali im linki do strony. Ptoszek.pl pojawił się nawet w filmie testującym "wirusy" autorstwa mlodziutki7, oczywiście Ptoszek.pl z wirusem nie ma nic wspólnego.
-
-Powstały również forki Ptoszka, które w interesujący sposób starają się zwrócić uwagę na zagrożenia w internecie. Cieszy mnie, że są osoby, które chcą tworzyć własne wersje projektu. Nie wiem jednak, czy ich celem było jedynie chwilowe trollowanie, czy faktyczna edukacja. Sam początkowo traktowałem Ptoszka jako żart, ale gdy strona zaczęła zdobywać popularność, zmieniłem swoje podejście i zacząłem rozwijać ją z myślą o przestrodze o niebezpieczeństwie stron w internecie.
-
-Obecnie projekt jest otwarty na Pull Requesty od innych osób, co stanowi świetną okazję, by zostać upamiętnionym w kodzie strony – każdy, kto wniesie ciekawą propozycję, może zostać dodany w postaci komentarza w kodzie, który zaproponował. 
-
-Niestety, pojawiły się również niezbyt zadowolające mnie kopie, które faktycznie były zawirusowane, ale na szczęście większość z nich już nie działa.
-Obecnie strona generuje około **2,5 tys. odwiedzin dziennie**, a w trakcie walk freakfightowych liczba ta wzrasta nawet do **10 tys. odwiedzin**, gdy ludzie rozsyłają linki do strony jako rzekome "nielegalne restreamy" transmisji.
-
-Nigdy nie przypuszczałem, że mój chwilowy troll na znajomych zyska tak ogromny rozgłos, a Ptoszek.pl stanie się tak rozpoznawalny. Co ciekawe, wiele osób wciąż zastanawia się, czy strona jest wirusem, IP-stealerem lub czymś podobnym. Odpowiedź jest prosta: nie, i nigdy taką formą nie będzie / nie był.
-Musiałem jednak zmierzyć się z licznymi zgłoszeniami – zarówno do Cloudflare, gdzie opierałem zabezpieczenia strony, jak i do CERT, który po moim odwołaniu przywrócił stronę do działania. Niestety, niektórzy nadal uparcie wierzą w fałszywe teorie o tym, że strona jest zawirusowana.
-
-Mimo to, będę nieustannie dbał o to, by strona była dostępna i mogła edukować użytkowników, ostrzegając ich przed realnymi zagrożeniami w internecie.
+Проект создан [jaczup.pl](https://jaczup.pl) на основе популярного зарубежного сайта [theannoyingsite.com](https://theannoyingsite.com).
 
 ---
 
-**Zostań częścią projektu i pomóż przestrzegać innych o niebezpieczeństwie w internecie!** 🚀
+## История
+
+Однажды, желая потроллить друзей, я создал страницу sapcord.pl/ptoszek. Это была переделанная копия theannoyingsite.com: вместо котов я разместил фотографии птиц и адаптировал код сайта, добавив элементы, связанные со мной. Страница зажила собственной жизнью, когда друзья начали рассылать на неё ссылки — так появилась первая форма её продвижения. Вскоре вышел первый TikTok о Ptoszek: сайт открыли на уроке информатики (это сделал Hedwis — бывший знакомый, [кто знает, тот знает :)]). Это было в 2021–2022 годах. Популярность начала расти.
+
+Растущий трафик побудил меня купить отдельный домен — ptoszek.pl, на котором сайт работает по сей день. С новым доменом его популярность взорвалась: пользователи массово показывали его в TikTok. Таких авторов, как MokrySuchar и Dawid Jasper (и, вероятно, ещё с десяток тех, о ком я не знаю), зрители троллили, присылая им ссылки на сайт. Ptoszek.pl даже появился в видео mlodziutki7, тестировавшем «вирусы», хотя, разумеется, Ptoszek.pl не имеет к вирусам никакого отношения.
+
+Также появились форки Ptoszek, которые интересным образом стараются привлечь внимание к опасностям в интернете. Меня радует, что люди хотят создавать собственные версии проекта. Но я не знаю, было ли их целью только краткое троллинг-развлечение или настоящая образовательная работа. Сначала я тоже воспринимал Ptoszek как шутку, но по мере роста популярности сайта изменил подход и стал развивать его как предупреждение об опасностях интернет-страниц.
+
+Сейчас проект открыт для Pull Request от других людей — это отличная возможность оставить след в коде сайта: каждый, кто внесёт интересное предложение, может быть упомянут в комментарии к предложенному коду.
+
+К сожалению, появились и не устраивающие меня копии, которые действительно были заражены вирусами; к счастью, большинство из них уже не работает. Сейчас сайт получает около **2,5 тыс. посещений в день**, а во время боёв freak fight это число вырастает до **10 тыс. посещений**: люди рассылают ссылку на сайт как якобы «нелегальный рестрим» трансляции.
+
+Я никогда не думал, что мой мимолётный троллинг друзей получит такую большую известность, а Ptoszek.pl станет настолько узнаваемым. Интересно, что многие до сих пор спрашивают, является ли сайт вирусом, IP-stealer’ом или чем-то подобным. Ответ прост: нет — и он никогда не был и не будет таким. Однако мне пришлось столкнуться со множеством жалоб: и в Cloudflare, на котором я строил защиту сайта, и в CERT, который после моей апелляции восстановил работу сайта. К сожалению, некоторые до сих пор упорно верят ложным теориям о том, что сайт заражён вирусами.
+
+Несмотря на это, я буду и дальше заботиться о доступности сайта и его способности обучать пользователей, предупреждая их о реальных опасностях в интернете.
+
+---
+
+**Станьте частью проекта и помогите предупреждать других об опасностях в интернете!** 🚀
+
+---
+
+## Автор
+
+Настоящий автор сайта — [Jakub «Jaczup» Piwnik](https://jaczup.pl).
